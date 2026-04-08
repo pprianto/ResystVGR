@@ -1,0 +1,16 @@
+name = "ResystVGR"
+uuid = "ee78f38e-5fc4-4b99-8e43-36f28b74635d"
+version = "0.1.0"
+authors = ["Pandu Prianto"]
+
+[deps]
+COPT = "227a2e2d-e949-4d8e-a1da-7384fe6f0b9f"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Gurobi = "2e9cd046-0924-5485-92f1-d5272153d98b"
+HiGHS = "87dc4568-4c63-4d18-b0c0-bb2238e4078b"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+XLSX = "fdbf4ff8-1666-58a4-91e7-1b58723a45e0"

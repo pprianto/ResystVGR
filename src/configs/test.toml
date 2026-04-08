@@ -1,0 +1,59 @@
+# Scenario configuration file in TOML format.
+# Copy and rename to make a new configuration that will be run repeatedly.
+
+###
+# general model run info
+###
+file_name = "test"      # file name, depending on cases
+first_hour = 1          # first hour in optimization
+last_hour = 24          # last hour in optimization (default = 8760, set to e.g. 24 for a quick test run)
+save = "yes"            # save results or not
+tolerance = 2000        # 2000m tolerance for 104 nodes (default), 500m tolerance for 166 nodes
+
+###
+# year and scenarios
+###
+target_year = 2050      # model target year
+profile_year = 2019     # model weather RE profile
+el_price_year = 1991    # future el price model year (1991 or 1992), 1991 is higher average
+demand = "beta"         # now, alpha, beta, with beta as highest demand increase
+el_heat_tax = 0.0       # assumed tax to generate electricity, on top of el price (€/MWh)
+emission_fee = 0.0      # assumed CO2 emission fee (€/tonCO2)
+co2_limit = "no"        # enforce CO2 limit constraint yes or no
+co2_budget = 0.0        # in MtCO2
+discount_rate = 0.05    # assumed discount rate
+
+###
+# power flow and import/export setup
+###
+power_flow = "lac"      # power flow representation (linearised AC (LAC) or DC)
+line_limit = 0.7        # power line capacity limit that considers contingency (default 70%)
+allow_export = "yes"    # possibility of export to transmission in model
+subscription = 3200     # import limit based on contract (default 3200 MW)
+import_limit = 1.0      # percentage of import capacity (out of subscription)
+nomV = 140.0            # system nominal operating voltage level (kV)
+ccc = 1500.0            # power lines current carrying capacity in A
+
+###
+# ev scenarios
+###
+use_EV = "yes"          # option if EV is included
+bat_cap = 60.0          # assumed vehicle battery capacity, default 60 kWh (15, 30, 60, 85)
+ev_CP = 7.0             # assumed vehicle charger power, default 6.9 kW (3.7, 6.9, 11.0, 22.0)
+charging_infra = "h1"   # assumed passenger car charging infrastructure (home, h1, h3, h6, ers)
+ev_V2G = "yes"          # V2G charging capability yes or no
+ev_direct = "yes"       # direct charging possiblity yes or no
+ev_optimal = "no"       # optimal charging possiblity yes or no
+ev_qty = "high"         # scenario of number of EVs high or low
+ev_ERS = "no"           # electrified road system
+cars_H2 = "no"          # possibility of hydrogen cars
+trucks_H2 = "no"        # possibility of hydrogen trucks
+ev_number = "high"      # high (60% 2030 100% 2050) or low (30% 2030 60% 2050)
+share_V2G = 0.20        # share of V2G in fleet
+share_optimal = 0.20    # share of optimal in fleet
+
+###
+# potentials for renewables
+###
+potential = "gis"       # RE potential (gis or eresan)
+limited = "yes"         # whether the potentials is limited by military or not
